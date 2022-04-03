@@ -6,20 +6,24 @@ from sklearn import datasets
 from sklearn.ensemble import RandomForestRegressor
 
 st.write("""
-# Boston House Price Prediction App
-This app predicts the **Boston House Price**!
+#  House Price Prediction App
+This app predicts the ** House Price**!
 """)
 st.write('---')
 
-if False:
-    # Loads the Boston House Price Dataset
-    boston = datasets.load_boston()
-    X = pd.DataFrame(boston.data, columns=boston.feature_names)
-    Y = pd.DataFrame(boston.target, columns=["MEDV"])
+# Loads the Boston House Price Dataset
+boston = datasets.load_boston()
+X = pd.DataFrame(boston.data, columns=boston.feature_names)
+Y = pd.DataFrame(boston.target, columns=["MEDV"])
 
-    # Sidebar
-    # Header of Specify Input Parameters
-    st.sidebar.header('Specify Input Parameters')
+
+# Sidebar
+# Header of Specify Input Parameters
+st.sidebar.header('Specify Input Parameters')
+if False:
+    
+
+
 
     def user_input_features():
         CRIM = st.sidebar.slider('CRIM', X.CRIM.min(), X.CRIM.max(), X.CRIM.mean())
@@ -83,4 +87,6 @@ if False:
 
     plt.title('Feature importance based on SHAP values (Bar)')
     shap.summary_plot(shap_values, X, plot_type="bar")
-    st.pyplot(bbox_inches='tight')
+
+
+st.pyplot(bbox_inches='tight')
